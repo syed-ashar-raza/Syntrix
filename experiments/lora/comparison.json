@@ -1,0 +1,53 @@
+{
+  "experiment": "LoRA vs Full Fine-Tuning",
+  "model": "distilbert/distilbert-base-uncased",
+  "task": "binary text classification",
+  "device": "cpu",
+  "seed": 42,
+  "dataset": {
+    "total": 79,
+    "train": 59,
+    "evaluation": 20,
+    "positive": 40,
+    "negative": 39
+  },
+  "shared_training_config": {
+    "epochs": 3,
+    "batch_size": 4,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "max_sequence_length": 64
+  },
+  "results": {
+    "lora": {
+      "trainable_parameters": 739586,
+      "base_plus_adapter_parameters": 67694596,
+      "trainable_percentage": 1.0925,
+      "training_seconds": 47.6951,
+      "train_loss": 0.6763330512576633,
+      "eval_loss": 0.6142057776451111,
+      "eval_accuracy": 0.85,
+      "eval_f1_macro": 0.8465473145780051
+    },
+    "full_fine_tuning": {
+      "trainable_parameters": 66955010,
+      "total_parameters": 66955010,
+      "trainable_percentage": 100.0,
+      "training_seconds": 65.4711,
+      "train_loss": 0.741481794251336,
+      "eval_loss": 0.6980648040771484,
+      "eval_accuracy": 0.5,
+      "eval_f1_macro": 0.3333333333333333
+    }
+  },
+  "interpretation": {
+    "scope": "Small synthetic downstream classification experiment",
+    "purpose": "Controlled parameter-efficient fine-tuning comparison",
+    "limitations": [
+      "CPU-only execution",
+      "79-example synthetic dataset",
+      "20-example evaluation set",
+      "Results should not be interpreted as general NLP performance"
+    ]
+  }
+}

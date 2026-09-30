@@ -1,0 +1,33 @@
+{
+  "model": "distilbert/distilbert-base-uncased",
+  "task": "binary text classification",
+  "method": "Full Fine-Tuning",
+  "seed": 42,
+  "device": "cpu",
+  "dataset_size": 79,
+  "train_size": 59,
+  "eval_size": 20,
+  "class_balance": {
+    "positive": 40,
+    "negative": 39
+  },
+  "epochs": 3,
+  "batch_size": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "max_sequence_length": 64,
+  "trainable_parameters": 66955010,
+  "total_parameters": 66955010,
+  "trainable_percentage": 100.0,
+  "training_seconds": 65.4711,
+  "train_loss": 0.741481794251336,
+  "evaluation": {
+    "eval_loss": 0.6980648040771484,
+    "eval_accuracy": 0.5,
+    "eval_f1_macro": 0.3333333333333333,
+    "eval_runtime": 1.722,
+    "eval_samples_per_second": 11.614,
+    "eval_steps_per_second": 2.904,
+    "epoch": 3.0
+  }
+}
