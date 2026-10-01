@@ -1,9 +1,8 @@
-﻿.venv/
+.venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
-data/
 artifacts/
 experiments/*.json
 experiments/*.pt
@@ -14,9 +13,10 @@ Syntrix-v0.1.0/.venv/
 Syntrix-v0.1.0/__pycache__/
 Syntrix-v0.1.0/.pytest_cache/
 Syntrix-v0.1.0/.ruff_cache/
-Syntrix-v0.1.0/data/
+/data/
 Syntrix-v0.1.0/artifacts/
 Syntrix-v0.1.0/experiments/*.json
 Syntrix-v0.1.0/experiments/*.pt
 Syntrix-v0.1.0/*.egg-info/
 Syntrix-v0.1.0/.env
+/data/
