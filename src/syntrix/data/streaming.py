@@ -1,6 +1,7 @@
 import torch
 from torch.utils.data import IterableDataset
 
+
 class SyntheticStreamingDataset(IterableDataset):
     """Generates samples lazily instead of materializing the dataset in RAM."""
     def __init__(self, samples=100_000, image_size=28, classes=10):
