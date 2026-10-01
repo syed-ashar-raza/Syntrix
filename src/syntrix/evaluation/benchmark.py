@@ -1,8 +1,12 @@
-import json,time
+import json
+import time
 from pathlib import Path
+
 import torch
+
 from syntrix.models import build_model
 from syntrix.utils.device import get_device
+
 
 def benchmark(model_name="cnn",batch_size=32,warmup=10,iterations=50):
     device=get_device(); model=build_model(model_name).to(device).eval(); x=torch.randn(batch_size,1,28,28,device=device)

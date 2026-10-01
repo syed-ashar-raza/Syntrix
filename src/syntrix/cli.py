@@ -1,7 +1,10 @@
-import argparse,json
-from syntrix.utils.device import describe_device
-from syntrix.training.engine import train,evaluate_saved
+import argparse
+import json
+
 from syntrix.evaluation.benchmark import benchmark
+from syntrix.training.engine import evaluate_saved, train
+from syntrix.utils.device import describe_device
+
 
 def main():
     p=argparse.ArgumentParser(prog="syntrix"); sub=p.add_subparsers(dest="cmd",required=True)
@@ -13,5 +16,6 @@ def main():
     elif a.cmd=="evaluate": evaluate_saved()
     elif a.cmd=="benchmark": benchmark(a.model,a.batch_size)
     else:
-        import uvicorn; uvicorn.run("syntrix.inference.api:app",host="127.0.0.1",port=8000)
+        import uvicorn
+        uvicorn.run("syntrix.inference.api:app", host="127.0.0.1", port=8000)
 if __name__=="__main__": main()

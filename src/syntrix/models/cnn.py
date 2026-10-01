@@ -1,4 +1,5 @@
-import torch.nn as nn
+from torch import nn
+
 
 class ConvNet(nn.Module):
     def __init__(self, classes=10):

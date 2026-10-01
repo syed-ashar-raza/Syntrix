@@ -1,12 +1,16 @@
-import json, time
+import json
+import time
 from pathlib import Path
+
 import torch
-import torch.nn as nn
 from sklearn.metrics import accuracy_score, f1_score
+from torch import nn
+
 from syntrix.data.vision import make_fashion_mnist
 from syntrix.models import build_model
 from syntrix.utils.device import get_device
 from syntrix.utils.repro import seed_everything
+
 
 def train(model_name="cnn", epochs=2, batch_size=128, lr=3e-4, seed=42, amp=True):
     seed_everything(seed); device=get_device()

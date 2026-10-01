@@ -15,7 +15,6 @@ from transformers import (
     TrainingArguments,
 )
 
-
 SEED = 42
 MODEL_NAME = "distilbert/distilbert-base-uncased"
 

@@ -3,12 +3,11 @@ from pathlib import Path
 
 import torch
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 from prometheus_client import Counter, Histogram, make_asgi_app
+from pydantic import BaseModel
 
 from syntrix.models import build_model
 from syntrix.utils.device import get_device
-
 
 device = get_device()
 model = None

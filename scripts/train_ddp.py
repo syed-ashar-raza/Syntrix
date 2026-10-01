@@ -1,9 +1,15 @@
-import argparse,os,torch,torch.distributed as dist
+import argparse
+import os
+
+import torch
+import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel as DDP
-from torch.utils.data import DataLoader,DistributedSampler
-from torchvision import datasets,transforms
+from torch.utils.data import DataLoader, DistributedSampler
+from torchvision import datasets, transforms
+
 from syntrix.models import build_model
 from syntrix.utils.repro import seed_everything
+
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--epochs",type=int,default=2); args=ap.parse_args(); distributed=int(os.environ.get("WORLD_SIZE","1"))>1
