@@ -382,7 +382,17 @@ The result demonstrates parameter-efficient adapter construction with approximat
 
 
 
-This is a LoRA configuration smoke test. It does not claim downstream fine-tuning accuracy because a complete fine-tuning experiment has not yet been executed.
+A separate downstream fine-tuning comparison has since been executed. Recorded results are available in `experiments/lora/results.json`, `experiments/lora/full_finetune_results.json`, and `experiments/lora/comparison.json`.
+
+| Metric | LoRA | Full fine-tuning |
+|---|---:|---:|
+| Trainable parameters | 739,586 | 66,955,010 |
+| Trainable parameters (%) | 1.0925% | 100% |
+| Training time (CPU) | 47.70 s | 65.47 s |
+| Evaluation accuracy | 0.85 | 0.50 |
+| Evaluation macro F1 | 0.8465 | 0.3333 |
+
+The experiment used a 79-example synthetic dataset, with 59 training examples and 20 evaluation examples, and a single recorded seed (42). These results demonstrate the fine-tuning workflow and a parameter-efficiency comparison; they do not establish generalization to real-world NLP tasks. The recorded runs have not been independently reproduced as part of this documentation update.
 
 
 
